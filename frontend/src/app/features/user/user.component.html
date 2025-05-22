@@ -1,0 +1,22 @@
+<div class="users-container">
+  <ul>
+    <li *ngFor="let usuario of usuarios">
+      ci: {{ usuario.ci }}<br>
+      nombre: {{ usuario.name }}
+    </li>
+  </ul>
+</div>
+<div class="user-form">
+  <form
+    (ngSubmit)="saveUser()"
+    #form="ngForm">
+    <input
+      [(ngModel)]="newUser.name" name="nombre" placeholder="Nombre" required />
+    <input
+      [(ngModel)]="newUser.ci" name="ci" placeholder="CI" required />
+    <button type="submit">
+      Save
+    </button>
+  </form>
+</div>
+
